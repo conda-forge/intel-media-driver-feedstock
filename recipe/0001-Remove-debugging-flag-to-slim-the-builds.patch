@@ -1,0 +1,37 @@
+From 4ea16a9e2253fa4b6b9b9485d9bedc383da6cd9e Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 9 Dec 2024 23:12:58 -0500
+Subject: [PATCH] Remove debugging flag to slim the builds
+
+---
+ media_driver/cmake/linux/media_compile_flags_linux.cmake  | 1 -
+ media_softlet/cmake/linux/media_compile_flags_linux.cmake | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/media_driver/cmake/linux/media_compile_flags_linux.cmake b/media_driver/cmake/linux/media_compile_flags_linux.cmake
+index 397e8c5..5c69e39 100755
+--- a/media_driver/cmake/linux/media_compile_flags_linux.cmake
++++ b/media_driver/cmake/linux/media_compile_flags_linux.cmake
+@@ -63,7 +63,6 @@ set(MEDIA_COMPILER_FLAGS_COMMON
+     -DNO_RTTI
+     -DNO_EXCEPTION_HANDLING
+     -DINTEL_NOT_PUBLIC
+-    -g
+ )
+ 
+ if(MEDIA_BUILD_HARDENING)
+diff --git a/media_softlet/cmake/linux/media_compile_flags_linux.cmake b/media_softlet/cmake/linux/media_compile_flags_linux.cmake
+index 2c36efe..f2dfdb9 100644
+--- a/media_softlet/cmake/linux/media_compile_flags_linux.cmake
++++ b/media_softlet/cmake/linux/media_compile_flags_linux.cmake
+@@ -62,7 +62,6 @@ set(MEDIA_COMPILER_FLAGS_COMMON
+     -DNO_RTTI
+     -DNO_EXCEPTION_HANDLING
+     -DINTEL_NOT_PUBLIC
+-    -g
+ )
+ 
+ 
+-- 
+2.47.0
+
