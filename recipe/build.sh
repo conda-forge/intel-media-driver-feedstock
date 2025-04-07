@@ -9,6 +9,7 @@ pushd build
 # of the install path
 cmake ${CMAKE_ARGS} \
    -DLIBVA_DRIVERS_PATH=${PREFIX}/lib/dri \
+   -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
    ..
 
 make -j${CPU_COUNT}
