@@ -1,15 +1,14 @@
-From 4ea16a9e2253fa4b6b9b9485d9bedc383da6cd9e Mon Sep 17 00:00:00 2001
+From b838f68989da04b1238bbb44d680db9915ebf936 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
-Date: Mon, 9 Dec 2024 23:12:58 -0500
+Date: Thu, 25 Dec 2025 19:26:50 -0500
 Subject: [PATCH] Remove debugging flag to slim the builds
 
 ---
- media_driver/cmake/linux/media_compile_flags_linux.cmake  | 1 -
- media_softlet/cmake/linux/media_compile_flags_linux.cmake | 1 -
- 2 files changed, 2 deletions(-)
+ media_driver/cmake/linux/media_compile_flags_linux.cmake | 2 --
+ 1 file changed, 2 deletions(-)
 
 diff --git a/media_driver/cmake/linux/media_compile_flags_linux.cmake b/media_driver/cmake/linux/media_compile_flags_linux.cmake
-index 397e8c5..5c69e39 100755
+index 397e8c5..2e209ab 100755
 --- a/media_driver/cmake/linux/media_compile_flags_linux.cmake
 +++ b/media_driver/cmake/linux/media_compile_flags_linux.cmake
 @@ -63,7 +63,6 @@ set(MEDIA_COMPILER_FLAGS_COMMON
@@ -20,18 +19,14 @@ index 397e8c5..5c69e39 100755
  )
  
  if(MEDIA_BUILD_HARDENING)
-diff --git a/media_softlet/cmake/linux/media_compile_flags_linux.cmake b/media_softlet/cmake/linux/media_compile_flags_linux.cmake
-index 2c36efe..f2dfdb9 100644
---- a/media_softlet/cmake/linux/media_compile_flags_linux.cmake
-+++ b/media_softlet/cmake/linux/media_compile_flags_linux.cmake
-@@ -62,7 +62,6 @@ set(MEDIA_COMPILER_FLAGS_COMMON
-     -DNO_RTTI
-     -DNO_EXCEPTION_HANDLING
-     -DINTEL_NOT_PUBLIC
--    -g
- )
- 
- 
+@@ -175,7 +174,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+          -Wno-inconsistent-missing-override
+          # for verison under clang-17
+          -Wno-ignored-optimization-argument
+-         -gdwarf-4
+         )
+     list(REMOVE_ITEM MEDIA_COMPILER_FLAGS_COMMON
+          -funswitch-loops
 -- 
-2.47.0
+2.43.0
 
