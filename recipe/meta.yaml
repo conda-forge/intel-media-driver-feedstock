@@ -1,4 +1,4 @@
-{% set version = "26.1.0" %}
+{% set version = "26.1.1" %}
 
 package:
   name: intel-media-driver
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/intel/media-driver/archive/refs/tags/intel-media-{{ version }}.tar.gz
-  sha256: b9bb6177a36c69a44d821062637b4bb69f7751e8a3be354e5402e1abdf93b96a
+  sha256: c59cbef1de138bcda45b93ad2b7f3db65619756d5c126fb32a30076ba5bb71b0
   patches:
     - 0001-Remove-debugging-flag-to-slim-the-builds.patch
 
