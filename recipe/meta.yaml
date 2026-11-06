@@ -11,7 +11,7 @@ source:
     - 0001-Remove-debugging-flag-to-slim-the-builds.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux64]
   run_exports:
     - {{ pin_subpackage('intel-media-driver', max_pin='x.x') }}
